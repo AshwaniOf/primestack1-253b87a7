@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 import { testimonials } from "@/data/testimonials";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Users, Award, Clock } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
   { icon: Users, value: "200+", label: "Clients Served" },
@@ -14,11 +15,22 @@ const stats = [
   { icon: CheckCircle2, value: "99%", label: "Client Satisfaction" },
 ];
 
+// Import all service images
+const serviceImages = import.meta.glob("@/assets/services/*.jpg", { eager: true, import: "default" }) as Record<string, string>;
+
+const getServiceImage = (slug: string) => {
+  const key = Object.keys(serviceImages).find(k => k.includes(slug));
+  return key ? serviceImages[key] : "";
+};
+
 const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative overflow-hidden py-24 md:py-36">
-      <div className="absolute inset-0 gradient-bg opacity-5" />
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+      </div>
       <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl animate-float" />
       <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-secondary/10 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
       <div className="container mx-auto px-4 relative z-10">
@@ -72,21 +84,36 @@ const Index = () => (
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Our Salesforce Services</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">End-to-end Salesforce solutions tailored to your industry and business needs.</p>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <AnimatedSection key={s.slug} delay={i * 0.08}>
               <Link
                 to={`/services/${s.slug}`}
-                className="glass-card rounded-xl p-6 block group hover:-translate-y-1 transition-all duration-300"
+                className="glass-card rounded-xl overflow-hidden block group hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center mb-4">
-                  <s.icon className="h-6 w-6 text-primary-foreground" />
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={getServiceImage(s.slug)}
+                    alt={s.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={800}
+                    height={512}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  <div className="absolute bottom-3 left-4">
+                    <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                      <s.icon className="h-5 w-5 text-primary-foreground" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display font-semibold text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{s.short}</p>
-                <span className="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn more <ArrowRight className="h-4 w-4" />
-                </span>
+                <div className="p-5">
+                  <h3 className="font-display font-semibold text-lg mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{s.short}</p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
               </Link>
             </AnimatedSection>
           ))}

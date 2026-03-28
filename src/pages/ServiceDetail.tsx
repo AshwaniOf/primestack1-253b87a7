@@ -5,6 +5,13 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 
+const serviceImages = import.meta.glob("@/assets/services/*.jpg", { eager: true, import: "default" }) as Record<string, string>;
+
+const getServiceImage = (slug: string) => {
+  const key = Object.keys(serviceImages).find(k => k.includes(slug));
+  return key ? serviceImages[key] : "";
+};
+
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = services.find(s => s.slug === slug);
@@ -26,23 +33,34 @@ const ServiceDetail = () => {
 
   return (
     <Layout>
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <Link to="/services" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8">
-              <ArrowLeft className="h-4 w-4" /> Back to Services
-            </Link>
-          </AnimatedSection>
+      {/* Hero Banner */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <img
+          src={getServiceImage(service.slug)}
+          alt={service.title}
+          className="w-full h-full object-cover"
+          width={800}
+          height={512}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 pb-8">
+          <Link to="/services" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-4">
+            <ArrowLeft className="h-4 w-4" /> Back to Services
+          </Link>
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center">
+              <service.icon className="h-8 w-8 text-primary-foreground" />
+            </div>
+            <h1 className="font-display text-3xl md:text-4xl font-bold">{service.title}</h1>
+          </div>
+        </div>
+      </section>
 
+      <section className="py-16">
+        <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <AnimatedSection>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center">
-                    <service.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h1 className="font-display text-3xl md:text-4xl font-bold">{service.title}</h1>
-                </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">{service.description}</p>
               </AnimatedSection>
 
