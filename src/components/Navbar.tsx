@@ -23,7 +23,6 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="PrimeStack Solutions" className="h-9 w-auto dark:invert-0 invert" />
-          <span className="font-display text-lg font-bold gradient-text hidden sm:inline">PrimeStack</span>
         </Link>
 
         {/* Desktop */}
