@@ -56,7 +56,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden py-28 md:py-40">
+      <section className="relative overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
           <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
