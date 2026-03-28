@@ -8,6 +8,7 @@ import sfServiceConsultant from "@/assets/certs/sf-service-consultant.png";
 import sfMarketing from "@/assets/certs/sf-marketing.png";
 import sfArchitect from "@/assets/certs/sf-architect.png";
 import sfDataCloud from "@/assets/certs/sf-data-cloud.png";
+import sfOmniStudio from "@/assets/certs/sf-omnistudio.png";
 
 const certifications = [
   { name: "Salesforce Administrator", image: sfAdmin },
@@ -17,6 +18,7 @@ const certifications = [
   { name: "Marketing Cloud", image: sfMarketing },
   { name: "Solution Architect", image: sfArchitect },
   { name: "Data Cloud", image: sfDataCloud },
+  { name: "OmniStudio Developer", image: sfOmniStudio },
 ];
 
 // Double the items for seamless infinite scroll
@@ -46,21 +48,21 @@ export const CertificationsCarousel = () => (
       <motion.div
         className="flex gap-12 items-center w-max"
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       >
         {doubled.map((cert, i) => (
           <div
             key={`${cert.name}-${i}`}
             className="flex flex-col items-center gap-3 min-w-[140px]"
           >
-            <div className="w-24 h-24 rounded-2xl bg-background border border-border shadow-lg flex items-center justify-center p-3 hover:scale-110 transition-transform duration-300">
+            <div className="w-28 h-28 flex items-center justify-center hover:scale-110 transition-transform duration-300">
               <img
                 src={cert.image}
                 alt={cert.name}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-lg"
                 loading="lazy"
-                width={96}
-                height={96}
+                width={112}
+                height={112}
               />
             </div>
             <span className="text-xs text-muted-foreground font-medium text-center max-w-[120px]">
