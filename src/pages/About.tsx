@@ -10,9 +10,10 @@ const values = [
 ];
 
 const team = [
-  { name: "Sourabh Goyal", role: "CEO & Founder", bio: "12+ years of Salesforce ecosystem experience." },
-  { name: "Vishal Dixit", role: "Head of Quality Assurance & Testing", bio: "6+ years of expertise in Q&A" }/*,
-  { name: "Sarah Chen", role: "VP of Consulting", bio: "Health Cloud & Financial Cloud specialist with deep domain expertise." },
+  { name: "Sourabh Goyal", role: "CEO & Founder", bio: "Salesforce expert with 12+ years of experience across multiple Salesforce Clouds, leveraging AI to drive innovation and business growth." },
+  { name: "Rajneesh Yadav", role: "Marketing Cloud Specialist", bio: "Salesforce and Marketing Cloud specialist with 15+ years of IT experience driving digital transformation and customer engagement." },
+  { name: "Pankaj", role: "Head of Quality Assurance & Testing", bio: "QA expert with 10+ years of experience ensuring quality, reliability, and seamless user experiences." },
+  { name: "Vishal Dixit", role: "Talent Acquisition Specialist", bio: "Talent Acquisition Specialist with 6+ years of experience identifying, attracting, and hiring top talent across diverse industries." }/*,
   { name: "James Park", role: "Head of Engineering", bio: "Leads our QA automation and DevOps practices for Salesforce delivery." },*/
 ];
 
@@ -50,7 +51,7 @@ const About = () => (
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Our Expertise Team</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">Certified Salesforce experts with decades of combined experience.</p>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 ">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {team.map((t, i) => (
             <AnimatedSection key={t.name} delay={i * 0.1}>
               <div className="glass-card rounded-xl p-6 text-center h-full">
