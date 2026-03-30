@@ -9,7 +9,8 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
-  // { to: "/blog", label: "Case Studies" },
+  { to: "/case-studies", label: "Case Studies" },
+  { to: "/blog", label: "Blog" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
 ];
@@ -22,7 +23,7 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="PrimeStack Solutions" className="h-14 w-auto dark:invert-0 invert" />
+          <img src={logo} alt="PrimeStack Solutions" className="h-9 w-auto dark:invert-0 invert" />
         </Link>
 
         {/* Desktop */}
