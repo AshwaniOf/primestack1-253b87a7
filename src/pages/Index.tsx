@@ -409,6 +409,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Case Studies Preview */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">See how we've helped organizations achieve measurable results with Salesforce.</p>
+          </AnimatedSection>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {caseStudies.slice(0, 3).map((cs, i) => (
+              <AnimatedSection key={cs.slug} delay={i * 0.1}>
+                <div className="glass-card rounded-xl p-6 h-full flex flex-col">
+                  <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-3">
+                    {cs.industry}
+                  </span>
+                  <h3 className="font-display font-semibold text-lg mb-3 leading-snug">{cs.title}</h3>
+                  <div className="flex gap-4 mb-4 mt-auto">
+                    {cs.metrics.slice(0, 2).map((m) => (
+                      <div key={m.label} className="text-center">
+                        <div className="font-display text-xl font-bold gradient-text">{m.value}</div>
+                        <div className="text-xs text-muted-foreground">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">{cs.challenge}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg" className="font-semibold">
+              <Link to="/case-studies">
+                View All Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24">
         <div className="container mx-auto px-4">
