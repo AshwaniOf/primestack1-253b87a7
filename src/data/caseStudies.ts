@@ -17,9 +17,13 @@ export interface CaseStudy {
   }[];
 }
 
+import sharepointImg from "@/assets/case-study-sharepoint.jpg";
+import refugeeImg from "@/assets/case-study-refugee.jpg";
+
 export const caseStudies: CaseStudy[] = [
   {
     slug: "sharepoint-salesforce-content-integration",
+    image: sharepointImg,
     title: "SharePoint & Salesforce Content Integration",
     subtitle: "Secure Enterprise Content Delivery via Experience Cloud",
     client: "Enterprise Client",
