@@ -8,6 +8,7 @@ export interface CaseStudy {
   focus: string;
   year: string;
   excerpt: string;
+  image: string;
   sections: {
     title: string;
     content: string;
