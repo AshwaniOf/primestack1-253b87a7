@@ -10,11 +10,9 @@ const values = [
 ];
 
 const team = [
-  { name: "Sourabh Goyal", role: "CEO & Founder", bio: "Founder and Salesforce Expert with 12+ Years of Technical Excellence Across Cloud Solutions." },
   { name: "Vishal Dixit", role: "Head of Operations", bio: "7+ Years of Expertise in Operational Excellence and Business Process Optimization." },
   { name: "Pankaj", role: "Head of Quality Assurance & Testing", bio: "Delivering Quality Through 10+ Years of Manual & Automation Testing" },
-  { name: "Rajneesh Yadav", role: "Head of Marketing Cloud", bio: "Marketing Cloud Leader with 10+ Years of Expertise in Personalized Customer Engagement." },
-  
+  { name: "Khalid Mohammad", role: "Marketing Cloud Specialist", bio: "4+ Years of Expertise in Personalized Customer Engagement." },
 ];
 
 const About = () => (
