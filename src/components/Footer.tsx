@@ -35,7 +35,7 @@ export const Footer = () => (
           <h4 className="font-display font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /><a href="mailto:contact@primestack.in" className="hover:text-primary transition-colors">contact@primestack.in</a></li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +91-8744823411</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +91-9990392926</li>
             <li className="flex items-center gap-2">
               <MessageCircle className="h-4 w-4 text-green-500" />
               <a href="https://wa.me/14809532817" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+1-(480)-953-2817</a>
