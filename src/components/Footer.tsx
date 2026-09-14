@@ -38,7 +38,11 @@ export const Footer = () => (
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +91-9990392926</li>
             <li className="flex items-center gap-2">
               <MessageCircle className="h-4 w-4 text-green-500" />
-              <a href="https://wa.me/14809532817" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+1-(480)-953-2817</a>
+              <a href="https://wa.me/919990392926" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp (India): +91-9990392926</a>
+            </li>
+            <li className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4 text-green-500" />
+              <a href="https://wa.me/14809532817" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp (US): +1-(480)-953-2817</a>
             </li>
             <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> IHDP BUsiness Park, Noida (UP), India</li>
           </ul>
