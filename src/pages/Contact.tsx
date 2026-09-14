@@ -80,6 +80,7 @@ const Contact = () => {
               {[
                 { icon: Mail, title: "Email", value: "contact@primestack.in", href: "mailto:contact@primestack.in" },
                 { icon: Phone, title: "Phone (India)", value: "+91-9990392926" },
+                { icon: MessageCircle, title: "WhatsApp (India)", value: "+91-9990392926", href: "https://wa.me/919990392926", iconColor: "text-green-500" },
                 { icon: MessageCircle, title: "WhatsApp (US)", value: "+1-(480)-953-2817", href: "https://wa.me/14809532817", iconColor: "text-green-500" },
                 { icon: MapPin, title: "Office", value: "IHDP Business Park, Noida (UP), India" },
               ].map((c, i) => (
