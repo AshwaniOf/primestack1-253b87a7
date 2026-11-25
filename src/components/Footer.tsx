@@ -44,7 +44,7 @@ export const Footer = () => (
               <MessageCircle className="h-4 w-4 text-green-500" />
               <a href="https://wa.me/14809532817" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp (US): +1-(480)-953-2817</a>
             </li>
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> IHDP BUsiness Park, Noida (UP), India</li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> A-814, Spectrum mall Sector 75, Noida (UP), India</li>
           </ul>
         </div>
       </div>
